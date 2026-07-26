@@ -1,17 +1,2069 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./icons/favicon.png" />
-    <title>Cloud Bridge Tours &amp; Travels — Your Journey, Our Priority</title>
-    <meta name="description" content="Cloud Bridge Tours & Travels — flights, hotels, Umrah packages, visa assistance and customised tours across Pakistan and worldwide." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cloud Bridge Tours & Travels
+    </title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <!-- YOUR LOGO -->
+    <a href="#" class="logo">
+
+        <img
+            src="logo.png"
+            alt="Cloud Bridge Tours and Travels Logo"
+        >
+
+    </a>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="package.html">Packages</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </nav>
+
+
+    <!-- PHONE -->
+
+    <div class="call-box">
+
+        <small>
+            Call Us Anytime
+        </small>
+
+        <strong>
+            +92 300 1234567
+        </strong>
+
+    </div>
+
+
+    <!-- QUOTE -->
+
+    <button class="quote-btn">
+
+        Get a Quote
+
+    </button>
+
+
+    <!-- MOBILE MENU -->
+
+    <div class="menu-icon">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero" id="home">
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content">
+
+        <h1>
+
+            Your Journey,
+
+            <br>
+
+            <span>
+                Our Priority
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Explore the world with Cloud Bridge Tours & Travels.
+
+            <br>
+
+            We make every journey comfortable,
+            memorable and worry-free.
+
+        </p>
+
+
+        <!-- HERO FEATURES -->
+
+        <div class="hero-features">
+
+            <div>
+
+                <!-- <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    <Best Prices -->
+                
+
+            </div>
+
+
+            <div>
+
+                <!-- <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Trusted Travel Partner -->
+                <!-- </span> -->
+
+            </div>
+
+
+            <div>
+
+                <!-- <i class="fa-solid fa-headset"></i>
+
+                <span>
+                    24/7 Support -->
+                
+
+            </div>
+
+
+            <div>
+
+                <!-- <i class="fa-solid fa-lock"></i>
+
+                <span>
+                     Safe & Secure -->
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         SEARCH BOX
+    ================================================= -->
+
+    <div class="search-box">
+
+
+        <!-- SEARCH TABS -->
+
+        <div class="search-tabs">
+
+            <button class="active">
+
+                <i class="fa-solid fa-plane"></i>
+
+                Flights
+
+            </button>
+
+
+            <button>
+
+                <i class="fa-solid fa-hotel"></i>
+
+                Hotels
+
+            </button>
+
+
+            <button>
+
+                <i class="fa-solid fa-suitcase"></i>
+
+                Packages
+
+            </button>
+
+
+            <button>
+
+                <i class="fa-solid fa-mosque"></i>
+
+                Umrah
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TRIP TYPE -->
+
+        <div class="trip-type">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="trip"
+                    checked
+                >
+
+                One Way
+
+            </label>
+
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="trip"
+                >
+
+                Round Trip
+
+            </label>
+
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="trip"
+                >
+
+                Multi City
+
+            </label>
+
+        </div>
+
+
+
+        <!-- LOCATION -->
+
+        <div class="location-row">
+
+
+            <div class="input-group">
+
+                <label>
+                    From
+                </label>
+
+                <div class="input-box">
+
+                    <span>
+                        Select departure city
+                    </span>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+            </div>
+
+
+            <button class="swap">
+
+                <i class="fa-solid fa-right-left"></i>
+
+            </button>
+
+
+            <div class="input-group">
+
+                <label>
+                    To
+                </label>
+
+                <div class="input-box">
+
+                    <span>
+                        Select destination city
+                    </span>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DATES -->
+
+        <div class="location-row">
+
+
+            <div class="input-group">
+
+                <label>
+                    Depart Date
+                </label>
+
+                <div class="input-box">
+
+                    <span>
+                        Select date
+                    </span>
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Return Date
+                </label>
+
+                <div class="input-box">
+
+                    <span>
+                        Select date
+                    </span>
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TRAVELLERS -->
+
+        <div class="input-group passengers">
+
+            <label>
+                Travellers & Class
+            </label>
+
+            <div class="input-box">
+
+                <span>
+                    1 Traveller, Economy
+                </span>
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SEARCH BUTTON -->
+
+        <button class="search-btn">
+
+            Search Flights
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUICK FEATURES
+===================================================== -->
+
+<section class="quick-features">
+
+
+    <div class="quick-card">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        <div>
+
+            <h4>
+                Easy Booking
+            </h4>
+
+            <p>
+                Book in just a few clicks
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="quick-card">
+
+        <i class="fa-solid fa-globe"></i>
+
+        <div>
+
+            <h4>
+                Wide Range
+            </h4>
+
+            <p>
+                1000+ Destinations
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="quick-card">
+
+        <i class="fa-solid fa-award"></i>
+
+        <div>
+
+            <h4>
+                Best Deals
+            </h4>
+
+            <p>
+                Exclusive offers
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="quick-card">
+
+        <i class="fa-solid fa-headset"></i>
+
+        <div>
+
+            <h4>
+                Customer Care
+            </h4>
+
+            <p>
+                Always here to help
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="section services" id="services">
+
+
+    <div class="section-heading">
+
+        <span>
+            Our Services
+        </span>
+
+        <h2>
+            Complete Travel Solutions
+        </h2>
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+        <div class="service-card">
+
+            <a href="forms.html#flight-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-plane-departure"></i></a>
+
+            <h4>
+                Flight Reservations
+            </h4>
+
+            <p>
+                Domestic & International
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#hotel-form"
+            target="_blank"
+            class="travel-service-item"> <i class="fa-solid fa-building"></i></a>
+
+            <h4>
+                Hotel Bookings
+            </h4>
+
+            <p>
+                Worldwide Hotels
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#umrah-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-mosque"></i></a>
+
+            <h4>
+                Umrah Packages
+            </h4>
+
+            <p>
+                Journey to VIP
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#tour-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-earth-americas"></i></a>
+
+            <h4>
+                Tour Packages
+            </h4>
+
+            <p>
+                Domestic & Global
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#visa-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-passport"></i></a>
+
+            <h4>
+                Visa Assistance
+            </h4>
+
+            <p>
+                All Countries
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#travel-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-shield-halved"></i></a>
+
+            <h4>
+                Travel Insurance
+            </h4>
+
+            <p>
+                Safe & Secure
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#tour-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-bus"></i></a>
+
+            <h4>
+                Transport Services
+            </h4>
+
+            <p>
+                Transfers & Tours
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <a href="forms.html#support-form"
+                target="_blank"
+                class="travel-service-item"><i class="fa-solid fa-headset"></i></a>
+
+            <h4>
+                24/7 Support
+            </h4>
+
+            <p>
+                We are here
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DESTINATIONS
+===================================================== -->
+
+<section class="section destinations">
+
+
+    <div class="section-heading">
+
+        <span>
+            Popular Destinations
+        </span>
+
+        <h2>
+            Explore Top Destinations
+        </h2>
+
+    </div>
+
+
+
+    <div class="destination-grid">
+
+
+        <div class="destination-card">
+
+            <img
+                src="images/turkey.jpg"
+                alt="Turkey"
+            >
+
+            <div class="destination-info">
+
+                <h3>
+                    Turkey
+                </h3>
+
+                <p>
+                    Starting from
+                </p>
+
+                <strong>
+                    PKR 95,000
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <img
+                src="images/malaysia.jpg"
+                alt="Malaysia"
+            >
+
+            <div class="destination-info">
+
+                <h3>
+                    Malaysia
+                </h3>
+
+                <p>
+                    Starting from
+                </p>
+
+                <strong>
+                    PKR 90,000
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <img
+                src="images/switzerland.jpg"
+                alt="Switzerland"
+            >
+
+            <div class="destination-info">
+
+                <h3>
+                    Switzerland
+                </h3>
+
+                <p>
+                    Starting from
+                </p>
+
+                <strong>
+                    PKR 120,000
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <img
+                src="images/dubai.jpg"
+                alt="Dubai"
+            >
+
+            <div class="destination-info">
+
+                <h3>
+                    Dubai
+                </h3>
+
+                <p>
+                    Starting from
+                </p>
+
+                <strong>
+                    PKR 85,000
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <img
+                src="images/saudi.jpg"
+                alt="Saudi Arabia"
+            >
+
+            <div class="destination-info">
+
+                <h3>
+                    Saudi Arabia
+                </h3>
+
+                <p>
+                    Starting from
+                </p>
+
+                <strong>
+                    PKR 105,000
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="destination-card">
+
+            <img
+                src="images/azerbaijan.jpg"
+                alt="Azerbaijan"
+            >
+
+            <div class="destination-info">
+
+                <h3>
+                    Azerbaijan
+                </h3>
+
+                <p>
+                    Starting from
+                </p>
+
+                <strong>
+                    PKR 125,000
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <button class="view-btn">
+        <a href="destinations.html" class="view-btn">View All Destinations</a>
+
+        
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT US
+===================================================== -->
+
+<section class="section about" id="about">
+
+
+    <div class="about-images">
+
+
+        <img
+            src="images/about1.jpg"
+            alt="Travel"
+        >
+
+
+        <img
+            src="images/about2.jpg"
+            alt="Travel"
+        >
+
+
+        <img
+            src="images/about3.jpg"
+            alt="Travel"
+        >
+
+
+        <div class="experience">
+
+            <strong>
+                10+
+            </strong>
+
+            <span>
+                Years of<br>
+                Experience
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="about-content">
+
+
+        <span>
+            ABOUT US
+        </span>
+
+
+        <h2>
+            Cloud Bridge Tours & Travels
+        </h2>
+
+
+        <p>
+
+            We are a full-service travel agency committed
+            to providing exceptional travel experiences.
+            From flights and hotels to visa assistance
+            and customized tour packages, we handle
+            everything so you can travel with peace of mind.
+
+        </p>
+
+
+
+        <div class="stats">
+
+
+            <div>
+
+                <strong>
+                    10+
+                </strong>
+
+                <span>
+                    Years Experience
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    5000+
+                </strong>
+
+                <span>
+                    Happy Customers
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    1000+
+                </strong>
+
+                <span>
+                    Successful Trips
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    Support
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <button class="discover-btn">
+         <a href="about.html" class="discover-btn">Discover More About Us</a>
+         <!-- <a href="about.html" class="about-btn">
+            Discover More
+            <i class="fa-solid fa-arrow-right"></i>
+        </a> -->
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOLIDAY PACKAGES
+===================================================== -->
+
+<section
+    class="section holiday"
+    id="packages"
+>
+
+
+    <div class="section-heading">
+
+        <span>
+            Top Tour Packages
+        </span>
+
+        <h2>
+            Best Holiday Packages
+        </h2>
+
+    </div>
+
+
+
+    <div class="package-grid">
+
+
+        <!-- NARAN -->
+
+        <div class="package-card">
+
+            <div class="package-image">
+
+                <img
+                    src="images/naran.jpg"
+                    alt="Naran Kaghan Tour"
+                >
+
+                <span class="duration">
+                    3 Days 2 Nights
+                </span>
+
+            </div>
+
+
+            <div class="package-content">
+
+                <h3>
+                    Naran Kaghan Tour
+                </h3>
+
+                <p class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Pakistan
+
+                </p>
+
+
+                <div class="package-icons">
+
+                    <span>
+                        <i class="fa-solid fa-hotel"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-car"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="package-bottom">
+
+                    <strong>
+                        PKR 15,999
+                    </strong>
+
+                    <button>
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HUNZA -->
+
+        <div class="package-card">
+
+            <div class="package-image">
+
+                <img
+                    src="images/hunza.jpg"
+                    alt="Hunza Valley Tour"
+                >
+
+                <span class="duration">
+                    5 Days 4 Nights
+                </span>
+
+            </div>
+
+
+            <div class="package-content">
+
+                <h3>
+                    Hunza Valley Tour
+                </h3>
+
+                <p class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Pakistan
+
+                </p>
+
+
+                <div class="package-icons">
+
+                    <span>
+                        <i class="fa-solid fa-hotel"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-car"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="package-bottom">
+
+                    <strong>
+                        PKR 24,999
+                    </strong>
+
+                    <button>
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SWAT -->
+
+        <div class="package-card">
+
+            <div class="package-image">
+
+                <img
+                    src="images/swat.jpg"
+                    alt="Swat Valley Tour"
+                >
+
+                <span class="duration">
+                    7 Days 6 Nights
+                </span>
+
+            </div>
+
+
+            <div class="package-content">
+
+                <h3>
+                    Swat Valley Tour
+                </h3>
+
+                <p class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Pakistan
+
+                </p>
+
+
+                <div class="package-icons">
+
+                    <span>
+                        <i class="fa-solid fa-hotel"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-car"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="package-bottom">
+
+                    <strong>
+                        PKR 26,999
+                    </strong>
+
+                    <button>
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TURKEY PACKAGE -->
+
+        <div class="package-card">
+
+            <div class="package-image">
+
+                <img
+                    src="images/turkey-package.jpg"
+                    alt="Turkey Tour Package"
+                >
+
+                <span class="duration">
+                    7 Days 6 Nights
+                </span>
+
+            </div>
+
+
+            <div class="package-content">
+
+                <h3>
+                    Turkey Tour Package
+                </h3>
+
+                <p class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Turkey
+
+                </p>
+
+
+                <div class="package-icons">
+
+                    <span>
+                        <i class="fa-solid fa-hotel"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-plane"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-camera"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="package-bottom">
+
+                    <strong>
+                        PKR 165,000
+                    </strong>
+
+                    <button>
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- UMRAH -->
+
+        <div
+            class="package-card"
+            id="umrah"
+        >
+
+            <div class="package-image">
+
+                <img
+                    src="images/umrah-package.jpg"
+                    alt="Umrah Package"
+                >
+
+                <span class="duration">
+                    14 Days
+                </span>
+
+            </div>
+
+
+            <div class="package-content">
+
+                <h3>
+                    Umrah Package
+                </h3>
+
+                <p class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Saudi Arabia
+
+                </p>
+
+
+                <div class="package-icons">
+
+                    <span>
+                        <i class="fa-solid fa-hotel"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-plane"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-mosque"></i>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-car"></i>
+                    </span>
+
+                </div>
+
+
+                <div class="package-bottom">
+
+                    <strong>
+                        PKR 105,000
+                    </strong>
+
+                    <button>
+                        Book Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <button class="view-btn">
+        <a href="package.html" class="view-btn">View All Packages</a>
+        
+
+    </button>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
+
+<section class="why-us">
+
+
+    <div class="section-heading">
+
+        <span>
+            Why Choose Us
+        </span>
+
+        <h2>
+            Your Satisfaction, Our Commitment
+        </h2>
+
+    </div>
+
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-medal"></i>
+
+            <h4>
+                Best Price Guarantee
+            </h4>
+
+            <p>
+                We ensure the best prices for you.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <h4>
+                Trusted & Reliable
+            </h4>
+
+            <p>
+                Thousands of happy customers trust us.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-gears"></i>
+
+            <h4>
+                Customized Packages
+            </h4>
+
+            <p>
+                Tailor-made packages for your needs.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h4>
+                24/7 Customer Support
+            </h4>
+
+            <p>
+                We are available whenever you need us.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h4>
+                Secure & Safe Travel
+            </h4>
+
+            <p>
+                Your safety and comfort are our priority.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h4>
+                Experienced Team
+            </h4>
+
+            <p>
+                Professional and experienced team.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="section testimonials">
+
+
+    <div class="section-heading">
+
+        <span>
+            What Our Clients Say
+        </span>
+
+        <h2>
+            Happy Travelers
+        </h2>
+
+    </div>
+
+
+
+    <div class="testimonial-grid">
+
+
+        <div class="testimonial-card">
+
+
+            <div class="customer">
+
+                <div class="customer-avatar">
+                    AR
+                </div>
+
+                <div>
+
+                    <h4>
+                        Ahmad Raza
+                    </h4>
+
+                    <span>
+                        Lahore, Pakistan
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stars">
+
+                ★★★★★
+
+            </div>
+
+
+            <p>
+
+                Amazing experience with Cloud Bridge!
+                Everything was perfectly arranged.
+                Highly recommended.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="testimonial-card">
+
+
+            <div class="customer">
+
+                <div class="customer-avatar">
+                    SK
+                </div>
+
+                <div>
+
+                    <h4>
+                        Sana Khan
+                    </h4>
+
+                    <span>
+                        Karachi, Pakistan
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stars">
+
+                ★★★★★
+
+            </div>
+
+
+            <p>
+
+                Our Umrah trip was smooth and comfortable.
+                Great services and very cooperative team.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="testimonial-card">
+
+
+            <div class="customer">
+
+                <div class="customer-avatar">
+                    UA
+                </div>
+
+                <div>
+
+                    <h4>
+                        Usman Ali
+                    </h4>
+
+                    <span>
+                        Islamabad, Pakistan
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stars">
+
+                ★★★★★
+
+            </div>
+
+
+            <p>
+
+                Best travel agency from booking to travel.
+                Everything was hassle-free.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARTNERS
+===================================================== -->
+
+<!-- <section class="partners">
+
+
+    <div class="section-heading">
+
+        <span>
+            Our Partners
+        </span>
+
+        <h2>
+            We Are Proud to Work With
+        </h2>
+
+    </div>
+
+
+
+    <div class="partner-grid">
+
+
+        <div class="partner">
+
+            <strong>
+                Emirates
+            </strong>
+
+        </div>
+
+
+        <div class="partner">
+
+            <strong>
+                QATAR
+            </strong>
+
+            <span>
+                AIRWAYS
+            </span>
+
+        </div>
+
+
+        <div class="partner">
+
+            <strong>
+                TURKISH
+            </strong>
+
+            <span>
+                AIRLINES
+            </span>
+
+        </div>
+
+
+        <div class="partner">
+
+            <strong>
+                SAUDIA
+            </strong>
+
+        </div>
+
+
+        <div class="partner">
+
+            <strong>
+                airblue
+            </strong>
+
+        </div>
+
+
+        <div class="partner">
+
+            <strong>
+                PIA
+            </strong>
+
+            <span>
+                Pakistan International
+            </span>
+
+        </div>
+
+    </div>
+
+</section> -->
+<!-- =====================================================
+     PARTNERS
+===================================================== -->
+
+<section class="partners">
+
+    <div class="section-heading">
+
+        <span>Our Partners</span>
+
+        <h2>We Are Proud to Work With</h2>
+
+    </div>
+
+
+    <div class="partner-grid">
+
+        <!-- Emirates -->
+        <div class="partner">
+            <img src="images/emiratesairline.png"
+                 alt="Emirates">
+        </div>
+
+
+        <!-- Qatar Airways -->
+        <div class="partner">
+            <img src="images/qatarline.jpg"
+                 alt="Qatar Airways">
+        </div>
+
+
+        <!-- Turkish Airlines -->
+        <div class="partner">
+            <img src="images/turkish.jpg"
+                 alt="Turkish Airlines">
+        </div>
+
+
+        <!-- Saudia -->
+        <div class="partner">
+            <img src="images/saudiairline.png"
+                 alt="Saudia">
+        </div>
+
+
+        <!-- Airblue -->
+        <div class="partner">
+            <img src="images/airblueline.jpg"
+                 alt="Airblue">
+        </div>
+
+
+        <!-- PIA -->
+        <div class="partner">
+            <img src="images/pialine.jpg"
+                 alt="PIA">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contact">
+
+
+    <div class="footer-content">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#" class="logo">
+
+                <img
+                    src="logo.png"
+                    alt="Cloud Bridge Tours and Travels"
+                >
+
+            </a>
+
+
+            <p>
+
+                We turn your travel dreams into reality.
+                Explore the world with Cloud Bridge Tours
+                & Travels.
+
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+                <a href="#">
+
+                    <i class="fab fa-whatsapp"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#packages">
+                Packages
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#contact">
+                Contact Us
+            </a>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div>
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="#">
+                Flight Reservations
+            </a>
+
+            <a href="#">
+                Hotel Bookings
+            </a>
+
+            <a href="#umrah">
+                Umrah Packages
+            </a>
+
+            <a href="#">
+                Visa Assistance
+            </a>
+
+            <a href="#">
+                Travel Insurance
+            </a>
+
+            <a href="#">
+                Transport Services
+            </a>
+
+        </div>
+
+
+
+        <!-- NEWSLETTER -->
+
+        <div>
+
+            <h3>
+                Newsletter
+            </h3>
+
+            <p>
+
+                Subscribe to get the latest offers
+                and travel updates.
+
+            </p>
+
+
+            <div class="newsletter">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                >
+
+                <button>
+                    Subscribe
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div>
+
+            <h3>
+                Contact Us
+            </h3>
+
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                +92 300 1234567
+
+            </p>
+
+
+            <p>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                info@cloudbridge.pk
+
+            </p>
+
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                 Blue Area,
+                Islamabad, Pakistan
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="copyright">
+
+        © 2026 Cloud Bridge Tours & Travels.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
 </html>

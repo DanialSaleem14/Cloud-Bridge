@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cloud Bridge - Travel Forms
+    </title>
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+            linear-gradient(
+                135deg,
+                #eef7ff,
+                #ffffff
+            );
+
+            min-height: 100vh;
+
+            padding: 50px 20px;
+
+        }
+
+
+        /* ==========================================
+           HEADER
+        ========================================== */
+
+        .form-header {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .form-header i {
+
+            font-size: 45px;
+
+            color: #0077b6;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .form-header h1 {
+
+            color: #003b73;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .form-header p {
+
+            color: #777;
+
+        }
+
+
+        /* ==========================================
+           FORM CONTAINER
+        ========================================== */
+
+        .forms-container {
+
+            max-width: 850px;
+
+            margin: auto;
+
+        }
+
+
+        .travel-form {
+
+            display: none;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 18px;
+
+            box-shadow:
+            0 15px 40px
+            rgba(0, 59, 115, 0.12);
+
+        }
+
+
+        /* ==========================================
+           ACTIVE FORM
+        ========================================== */
+
+        .travel-form:target {
+
+            display: block;
+
+        }
+
+
+        /* Show Flight by default */
+/* 
+        .travel-form:first-child {
+
+            display: block;
+
+        } */
+        .travel-form {
+           display: none;
+        }
+
+
+
+        /* ==========================================
+           FORM TITLE
+        ========================================== */
+
+        .travel-form h2 {
+
+            color: #003b73;
+
+            text-align: center;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .travel-form .description {
+
+            text-align: center;
+
+            color: #777;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* ==========================================
+           FORM GRID
+        ========================================== */
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .form-group.full {
+
+            grid-column:
+            span 2;
+
+        }
+
+
+        .form-group label {
+
+            color: #003b73;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #d4e3ef;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: #0077b6;
+
+            box-shadow:
+            0 0 0 3px
+            rgba(0, 119, 182, 0.1);
+
+        }
+
+
+        /* ==========================================
+           BUTTON
+        ========================================== */
+
+        .submit-btn {
+
+            grid-column:
+            span 2;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background:
+            linear-gradient(
+                135deg,
+                #0077b6,
+                #003b73
+            );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .submit-btn:hover {
+
+            transform:
+            translateY(-3px);
+
+            box-shadow:
+            0 8px 20px
+            rgba(0, 59, 115, 0.2);
+
+        }
+
+
+        /* ==========================================
+           BACK BUTTON
+        ========================================== */
+
+        .back-home {
+
+            display: block;
+
+            width: fit-content;
+
+            margin: 25px auto 0;
+
+            padding: 12px 25px;
+
+            background: #003b73;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+        }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 30px 15px;
+
+            }
+
+
+            .travel-form {
+
+                padding: 25px 20px;
+
+            }
+
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .form-group.full,
+            .submit-btn {
+
+                grid-column:
+                span 1;
+
+            }
+
+
+            .form-header h1 {
+
+                font-size: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     HEADER
+================================================= -->
+
+<div class="form-header">
+
+    <i class="fa-solid fa-plane"></i>
+
+    <h1>
+        Cloud Bridge Tours & Travels
+    </h1>
+
+    <p>
+        Complete the form below and our team
+        will contact you.
+    </p>
+
+</div>
+
+
+
+<div class="forms-container">
+
+
+    <!-- =================================================
+         FLIGHT FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="flight-form">
+
+        <h2>
+            <i class="fa-solid fa-plane-departure"></i>
+            Flight Reservation
+        </h2>
+
+        <p class="description">
+            Book your domestic or international flight.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    From
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Departure City"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    To
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Destination City"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Departure Date
+                </label>
+
+                <input
+                    type="date"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Return Date
+                </label>
+
+                <input
+                    type="date"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Passengers
+                </label>
+
+                <input
+                    type="number"
+                    placeholder="Number of Passengers"
+                    min="1"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Class
+                </label>
+
+                <select>
+
+                    <option>
+                        Economy
+                    </option>
+
+                    <option>
+                        Business
+                    </option>
+
+                    <option>
+                        First Class
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Submit Flight Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         HOTEL FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="hotel-form">
+
+        <h2>
+            <i class="fa-solid fa-hotel"></i>
+            Hotel Booking
+        </h2>
+
+        <p class="description">
+            Book comfortable hotels worldwide.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Destination / Hotel
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="City or Hotel Name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Check In
+                </label>
+
+                <input type="date">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Check Out
+                </label>
+
+                <input type="date">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Adults
+                </label>
+
+                <input
+                    type="number"
+                    min="1"
+                    placeholder="Adults"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Rooms
+                </label>
+
+                <input
+                    type="number"
+                    min="1"
+                    placeholder="Rooms"
+                >
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Submit Hotel Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         UMRAH FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="umrah-form">
+
+        <h2>
+            <i class="fa-solid fa-mosque"></i>
+            Umrah Package
+        </h2>
+
+        <p class="description">
+            Plan your spiritual journey with us.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Package
+                </label>
+
+                <select>
+
+                    <option>
+                        Select Package
+                    </option>
+
+                    <option>
+                        Economy
+                    </option>
+
+                    <option>
+                        Premium
+                    </option>
+
+                    <option>
+                        VIP
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Travellers
+                </label>
+
+                <input
+                    type="number"
+                    min="1"
+                    placeholder="Number of Travellers"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Departure Date
+                </label>
+
+                <input type="date">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Duration
+                </label>
+
+                <select>
+
+                    <option>
+                        7 Days
+                    </option>
+
+                    <option>
+                        10 Days
+                    </option>
+
+                    <option>
+                        14 Days
+                    </option>
+
+                    <option>
+                        21 Days
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Submit Umrah Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         TOUR PACKAGE FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="tour-form">
+
+        <h2>
+            <i class="fa-solid fa-earth-americas"></i>
+            Tour Package
+        </h2>
+
+        <p class="description">
+            Tell us about your dream destination.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Where do you want to go?"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Travel Date
+                </label>
+
+                <input type="date">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Travellers
+                </label>
+
+                <input
+                    type="number"
+                    placeholder="Number of Travellers"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Requirements
+                </label>
+
+                <textarea
+                    placeholder="Tell us about your requirements">
+                </textarea>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Submit Tour Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         VISA FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="visa-form">
+
+        <h2>
+            <i class="fa-solid fa-passport"></i>
+            Visa Assistance
+        </h2>
+
+        <p class="description">
+            Get assistance with your visa application.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Destination Country
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Country"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Visa Type
+                </label>
+
+                <select>
+
+                    <option>
+                        Tourist Visa
+                    </option>
+
+                    <option>
+                        Business Visa
+                    </option>
+
+                    <option>
+                        Visit Visa
+                    </option>
+
+                    <option>
+                        Student Visa
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Message
+                </label>
+
+                <textarea
+                    placeholder="Tell us about your visa requirements">
+                </textarea>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Submit Visa Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         INSURANCE FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="insurance-form">
+
+        <h2>
+            <i class="fa-solid fa-shield-halved"></i>
+            Travel Insurance
+        </h2>
+
+        <p class="description">
+            Protect yourself and your journey.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Travel Destination"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Travel Date
+                </label>
+
+                <input type="date">
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Requirements
+                </label>
+
+                <textarea
+                    placeholder="Tell us about your insurance requirements">
+                </textarea>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Get Insurance Quote
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         TRANSPORT FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="transport-form">
+
+        <h2>
+            <i class="fa-solid fa-bus"></i>
+            Transport Services
+        </h2>
+
+        <p class="description">
+            Book reliable transport for your journey.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Pickup Location
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Pickup Location"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Drop-off Location
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Drop-off Location"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Requirements
+                </label>
+
+                <textarea
+                    placeholder="Tell us about your transport needs">
+                </textarea>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Submit Transport Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =================================================
+         SUPPORT FORM
+    ================================================= -->
+
+    <div class="travel-form"
+         id="support-form">
+
+        <h2>
+            <i class="fa-solid fa-headset"></i>
+            24/7 Support
+        </h2>
+
+        <p class="description">
+            Our team is here to help you.
+        </p>
+
+
+        <form class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    placeholder="+92 XXX XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Your Message
+                </label>
+
+                <textarea
+                    placeholder="How can we help you?">
+                </textarea>
+
+            </div>
+
+
+            <button class="submit-btn"
+                    type="submit">
+
+                Contact Support
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+</div>
+
+
+<!-- BACK TO HOME -->
+
+<a href="index.html"
+   class="back-home">
+
+    <i class="fa-solid fa-arrow-left"></i>
+
+    Back to Home
+
+</a>
+
+
+</body>
+
+</html>
