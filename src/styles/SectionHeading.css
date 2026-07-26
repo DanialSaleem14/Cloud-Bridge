@@ -1,0 +1,40 @@
+/* ===========================================================================
+   SectionHeading component
+   =========================================================================== */
+
+.section-head { text-align: center; margin-bottom: 46px; }
+
+.section-head__eyebrow {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-head__title {
+  font-size: clamp(26px, 3.4vw, 38px);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.section-head__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--navy);
+}
+.section-head__rule span {
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.section-head__rule span:last-child {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.section-head--light .section-head__title { color: #fff; }

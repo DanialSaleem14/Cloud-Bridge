@@ -1,0 +1,74 @@
+/* ===========================================================================
+   About component
+   =========================================================================== */
+
+.about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+.about__media {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+.about__img { border-radius: var(--radius); object-fit: cover; box-shadow: var(--shadow-sm); }
+.about__img--a { grid-column: 1; grid-row: 1 / span 2; height: 100%; min-height: 320px; }
+.about__img--b { grid-column: 2; grid-row: 1; aspect-ratio: 4 / 3; }
+.about__img--c { grid-column: 2; grid-row: 2; aspect-ratio: 3 / 4; }
+
+.about__badge {
+  position: absolute;
+  left: 12%;
+  bottom: -8px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 16px 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 150px;
+}
+.about__badge strong { display: block; font-size: 28px; font-weight: 700; line-height: 1; }
+.about__badge span { font-size: 12.5px; line-height: 1.35; display: block; margin-top: 4px; }
+
+.about__title { font-size: clamp(24px, 3vw, 34px); margin: 8px 0 16px; }
+.about__body { font-size: 15.5px; line-height: 1.85; }
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 30px 0;
+}
+.about__stats li {
+  text-align: center;
+  padding: 4px 10px;
+  border-right: 1px solid var(--line);
+}
+.about__stats li:last-child { border-right: 0; }
+.about__stats strong { display: block; font-size: 25px; font-weight: 700; color: var(--ink); }
+.about__stats span { font-size: 12.5px; color: var(--muted); }
+
+/* --- responsive ---------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .about__inner { grid-template-columns: 1fr; gap: 56px; }
+}
+
+@media (max-width: 768px) {
+  .about__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+  .about__stats li:nth-child(2n) { border-right: 0; }
+}
+
+@media (max-width: 576px) {
+  .about__media { grid-template-columns: 1fr 1fr; }
+  .about__img--a { grid-column: 1 / -1; grid-row: 1; min-height: 220px; }
+  .about__img--b { grid-column: 1; grid-row: 2; }
+  .about__img--c { grid-column: 2; grid-row: 2; }
+  .about__badge { position: static; margin-top: 16px; max-width: none; }
+}

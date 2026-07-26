@@ -1,0 +1,42 @@
+/* ===========================================================================
+   FeatureBar component (floating strip under the hero)
+   =========================================================================== */
+
+.featurebar {
+  position: relative;
+  z-index: 5;
+  margin-top: -38px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 24px 8px;
+}
+
+.featurebar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 6px 16px;
+  min-width: 0;
+  border-right: 1px solid var(--line);
+}
+.featurebar__item:last-child { border-right: 0; }
+.featurebar__item span { display: flex; flex-direction: column; line-height: 1.35; min-width: 0; }
+.featurebar__item strong { font-size: 15px; color: var(--ink); font-weight: 600; }
+.featurebar__item small { font-size: 13px; color: var(--muted); }
+.featurebar__icon { color: var(--gold); }
+
+/* --- responsive ---------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .featurebar { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 22px; }
+  .featurebar__item:nth-child(2n) { border-right: 0; }
+}
+
+@media (max-width: 576px) {
+  .featurebar { grid-template-columns: 1fr; margin-top: -26px; }
+  .featurebar__item { border-right: 0; justify-content: flex-start; }
+}

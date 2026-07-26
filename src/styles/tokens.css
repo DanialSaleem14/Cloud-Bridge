@@ -1,0 +1,30 @@
+/* ===========================================================================
+   Design tokens — change a value here and it propagates site-wide.
+   =========================================================================== */
+
+:root {
+  --navy: #0e2a5c;
+  --navy-deep: #0a1f45;
+  --navy-soft: #143667;
+  --gold: #c69543;
+  --gold-dark: #a97c2f;
+  --gold-light: #e8c987;
+  --ink: #16233a;
+  --body: #4a5568;
+  --muted: #7b869a;
+  --line: #e4e8f0;
+  --bg: #ffffff;
+  --bg-alt: #f5f7fc;
+
+  --container: 1200px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 2px 10px rgba(14, 42, 92, 0.06);
+  --shadow: 0 10px 34px rgba(14, 42, 92, 0.1);
+  --shadow-lg: 0 24px 60px rgba(10, 31, 69, 0.22);
+
+  --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Yellowtail', cursive;
+
+  --nav-h: 84px;
+}

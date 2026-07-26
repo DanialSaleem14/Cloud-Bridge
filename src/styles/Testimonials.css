@@ -1,0 +1,45 @@
+/* ===========================================================================
+   Testimonials component
+   =========================================================================== */
+
+.testi {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.testi__card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.testi__top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.testi__avatar {
+  width: 54px; height: 54px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bg-alt);
+}
+.testi__card h3 { font-size: 15.5px; font-weight: 600; }
+.testi__city { font-size: 12.5px; color: var(--muted); }
+.testi__stars { display: flex; gap: 2px; color: var(--gold); margin-top: 3px; }
+.testi__quote { font-size: 14px; line-height: 1.8; color: var(--body); }
+
+.testi__dots { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
+.testi__dots button {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.2s ease, width 0.2s ease;
+}
+.testi__dots button.is-active { background: var(--navy); width: 24px; border-radius: 5px; }
+
+/* --- responsive ---------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .testi { grid-template-columns: 1fr; }
+  .testi__card:nth-child(n + 2) { display: none; }
+}

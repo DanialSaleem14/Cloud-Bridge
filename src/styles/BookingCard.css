@@ -1,0 +1,195 @@
+/* ===========================================================================
+   BookingCard component (hero search widget)
+   =========================================================================== */
+
+.bookcard {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* --- tabs ---------------------------------------------------------------- */
+
+.bookcard__tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line);
+}
+.bookcard__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 16px 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.bookcard__tab:hover { color: var(--navy); }
+.bookcard__tab.is-active { color: var(--navy); font-weight: 600; border-bottom-color: var(--navy); }
+
+.bookcard__body { padding: 22px 24px 26px; }
+
+/* --- trip type radios ---------------------------------------------------- */
+
+.bookcard__trip { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 20px; }
+
+.radio { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; color: var(--body); }
+.radio input { position: absolute; opacity: 0; width: 0; height: 0; }
+.radio__dot {
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  display: grid; place-items: center;
+  transition: border-color 0.18s ease;
+}
+.radio__dot::after {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--navy);
+  transform: scale(0);
+  transition: transform 0.18s ease;
+}
+.radio.is-active { color: var(--ink); font-weight: 500; }
+.radio.is-active .radio__dot { border-color: var(--gold); }
+.radio.is-active .radio__dot::after { transform: scale(1); }
+
+/* --- fields -------------------------------------------------------------- */
+
+.field { display: block; margin-bottom: 16px; }
+.field__label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.field__control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fcfdff;
+  color: var(--navy);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.field__control:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(198, 149, 67, 0.14); }
+.field__control input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  color: var(--ink);
+}
+.field__control input::placeholder { color: var(--muted); }
+
+/* --- route + grid -------------------------------------------------------- */
+
+.bookcard__route {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: end;
+}
+.bookcard__route .field { margin-bottom: 16px; }
+
+.bookcard__swap {
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--navy);
+  border: 1px solid var(--line);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.bookcard__swap:hover { background: var(--navy); color: #fff; }
+
+.bookcard__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+
+.btn.bookcard__submit { width: 100%; margin-top: 8px; padding-block: 15px; }
+
+/* --- responsive ---------------------------------------------------------- */
+
+@media (max-width: 576px) {
+  .bookcard__tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bookcard__grid { grid-template-columns: 1fr; }
+  .bookcard__route { grid-template-columns: 1fr; }
+  .bookcard__swap {
+    width: 100%;
+    height: 38px;
+    margin: -4px 0 12px;
+    border-radius: 8px;
+  }
+}
+
+/* --- selects, disabled fields, multi-city (added) ------------------------- */
+
+.field__control select {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  appearance: none;
+  cursor: pointer;
+}
+.field__control select.is-placeholder { color: var(--muted); }
+.field__control select option { color: var(--ink); }
+
+.field.is-disabled { opacity: 0.5; pointer-events: none; }
+.field.is-disabled .field__control { background: var(--bg-alt); }
+
+.bookcard__leg {
+  padding: 12px 14px 2px;
+  margin-bottom: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: #fcfdff;
+}
+.bookcard__leg-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.bookcard__leg-remove {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.bookcard__leg-remove:hover { color: #c0392b; }
+
+.bookcard__addleg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.bookcard__addleg:hover { color: var(--gold); }
