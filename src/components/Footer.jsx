@@ -75,7 +75,6 @@ export default function Footer() {
             <li><Icon name="phone" size={15} /><a href={company.phoneHref}>{company.phone}</a></li>
             <li><Icon name="mail" size={15} /><a href={`mailto:${company.email}`}>{company.email}</a></li>
             <li><Icon name="pin" size={15} /><span>{company.address}</span></li>
-            <li><Icon name="globe" size={15} /><span>{company.website}</span></li>
           </ul>
         </div>
       </div>
@@ -83,7 +82,7 @@ export default function Footer() {
       <div className="footer__bar">
         <div className="container footer__bar-inner">
           <p>© {new Date().getFullYear()} {company.fullName}. All Rights Reserved.</p>
-          <p>Designed with <span className="footer__heart">♥</span> for Travelers</p>
+          <p>Made by <a href="https://github.com/DanialSaleem14" target="_blank" rel="noopener noreferrer">KhalidTech</a></p>
         </div>
       </div>
     </footer>

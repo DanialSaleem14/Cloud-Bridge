@@ -7,13 +7,11 @@ export default function About() {
     <section className="section about" id="about">
       <div className="container about__inner">
         <div className="about__media">
-          <Img src="about-1" alt="Aeroplane over a mountain road" className="about__img about__img--a" />
-          <Img src="about-2" alt="Tour transport on a mountain highway" className="about__img about__img--b" />
-          <Img src="about-3" alt="The Kaaba in Makkah" className="about__img about__img--c" />
-          <div className="about__badge">
-            <strong>{about.badge.value}</strong>
-            <span>{about.badge.label}</span>
-          </div>
+          <Img
+            src="about-1"
+            alt="Aeroplane over a mountain road"
+            className="about__img"
+          />
         </div>
 
         <div className="about__copy">
