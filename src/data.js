@@ -7,12 +7,11 @@ export const company = {
   name: 'Cloud Bridge',
   fullName: 'Cloud Bridge Tours & Travels',
   tagline: 'We turn your travel dreams into reality. Explore the world with Cloud Bridge.',
-  phone: '+92 300 1234567',
-  phoneHref: 'tel:+923001234567',
-  whatsapp: '923001234567', // <-- REPLACE with the real WhatsApp number (country code, no + or spaces)
-  email: 'info@cloudbridge.pk',
-  website: 'www.cloudbridge.pk',
-  address: 'Office # 12, 3rd Floor, Blue Area, Islamabad, Pakistan',
+  phone: '+92 334 7411370',
+  phoneHref: 'tel:+923347411370',
+  whatsapp: '923347411370', // <-- REPLACE with the real WhatsApp number (country code, no + or spaces)
+  email: 'cloudbridge.officials@gmail.com',
+  address: 'Islamabad, Pakistan',
 };
 
 export const navLinks = [
