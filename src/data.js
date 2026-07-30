@@ -262,23 +262,6 @@ export const about = {
   ],
 };
 
-// --- Packages --------------------------------------------------------------
-
-const AMENITIES = [
-  { icon: 'car',        label: 'Transport' },
-  { icon: 'bed',        label: 'Hotel' },
-  { icon: 'binoculars', label: 'Guide' },
-  { icon: 'utensils',   label: 'Meals' },
-];
-
-export const packages = [
-  { title: 'Naran Kaghan Tour',  location: 'Pakistan',     duration: '3 Days 2 Nights', image: 'pkg-naran-kaghan', price: 'PKR 15,999',  amenities: AMENITIES },
-  { title: 'Hunza Valley Tour',  location: 'Pakistan',     duration: '5 Days 4 Nights', image: 'pkg-hunza-valley', price: 'PKR 24,999',  amenities: AMENITIES },
-  { title: 'Swat Valley Tour',   location: 'Pakistan',     duration: '7 Days 6 Nights', image: 'pkg-swat-valley',  price: 'PKR 28,999',  amenities: AMENITIES },
-  { title: 'Turkey Tour Package', location: 'Turkey',      duration: '7 Days 6 Nights', image: 'pkg-turkey',       price: 'PKR 165,000', amenities: AMENITIES, featured: true },
-  { title: 'Umrah Package',      location: 'Saudi Arabia', duration: '14 Days',         image: 'pkg-umrah',        price: 'PKR 105,000', amenities: AMENITIES },
-];
-
 // --- Why choose us ---------------------------------------------------------
 
 export const whyChooseUs = [
