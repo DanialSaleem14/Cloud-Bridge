@@ -1,16 +1,17 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Icon from './Icon.jsx';
 import {
   bookingTabs,
   bookingForms,
   cityOptions,
-  company,
 } from '../data.js';
 import '../styles/BookingCard.css';
 
 const emptyLeg = () => ({ from: '', to: '', date: '' });
 
 export default function BookingCard() {
+  const navigate = useNavigate();
   const [tab, setTab] = useState('flights');
   const [toggles, setToggles] = useState({});   // { flights: 'oneway', hotels: 'domestic', ... }
   const [values, setValues] = useState({});     // { flights: { from: '...' }, ... }
@@ -39,36 +40,15 @@ export default function BookingCard() {
 
   const isOff = (field) => Boolean(field.disabledWhen?.includes(toggle));
 
-  // Builds a readable enquiry out of whatever the visitor filled in.
-  const summary = useMemo(() => {
-    const tabLabel = bookingTabs.find((t) => t.id === tab)?.label || tab;
-    const toggleLabel = form.toggles?.find((o) => o.id === toggle)?.label;
-    const lines = [`${tabLabel} enquiry${toggleLabel ? ` (${toggleLabel})` : ''}`];
-
-    if (isMultiCity) {
-      legs.forEach((leg, i) => {
-        if (leg.from || leg.to || leg.date)
-          lines.push(`Flight ${i + 1}: ${leg.from || '?'} to ${leg.to || '?'} ${leg.date || ''}`.trim());
-      });
-      if (data.travellers) lines.push(`Travellers: ${data.travellers}`);
-      if (data.cabin) lines.push(`Class: ${data.cabin}`);
-    } else {
-      form.rows.flatMap((r) => r.fields).forEach((f) => {
-        if (isOff(f)) return;
-        const v = data[f.name];
-        if (v) lines.push(`${f.label}: ${v}`);
-      });
-    }
-    return lines.join('\n');
-  }, [tab, toggle, values, legs]); // eslint-disable-line react-hooks/exhaustive-deps
-
   const submit = (e) => {
     e.preventDefault();
-    // Sends the enquiry to WhatsApp. Swap `company.phone` in data.js for the real number,
-    // or replace this block with your own API call.
-    const number = (company.whatsapp || company.phone || '').replace(/\D/g, '');
-    if (!number) return;
-    window.open(`https://wa.me/${number}?text=${encodeURIComponent(summary)}`, '_blank', 'noopener');
+    // Sends the visitor to the results page, filtered by whatever they filled in.
+    const from = isMultiCity ? legs[0]?.from : data.from;
+    const to = isMultiCity ? legs[0]?.to : (data.to || data.destination);
+    const search = new URLSearchParams({ type: tab });
+    if (from) search.set('from', from);
+    if (to) search.set('to', to);
+    navigate(`/results?${search.toString()}`);
   };
 
   return (

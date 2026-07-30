@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from './Icon.jsx';
 import { company, socials, footer } from '../data.js';
 import '../styles/Footer.css';
@@ -83,6 +84,7 @@ export default function Footer() {
         <div className="container footer__bar-inner">
           <p>© {new Date().getFullYear()} {company.fullName}. All Rights Reserved.</p>
           <p>Made by <a href="https://github.com/DanialSaleem14" target="_blank" rel="noopener noreferrer">KhalidTech</a></p>
+          <Link to="/admin/login" className="footer__admin-link">Admin Login</Link>
         </div>
       </div>
     </footer>

@@ -1,0 +1,61 @@
+/* ===========================================================================
+   Results page
+   =========================================================================== */
+
+.results { min-height: 70vh; padding: 40px 0 80px; background: var(--bg-alt); }
+
+.results__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 22px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.results__back:hover { color: var(--gold); }
+
+.results h1 { font-size: 28px; color: var(--ink); margin-bottom: 6px; }
+.results__sub { color: var(--muted); font-size: 14.5px; margin-bottom: 28px; }
+
+.results__list { display: flex; flex-direction: column; gap: 14px; }
+
+.results__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 20px 24px;
+}
+.results__card-main h3 { font-size: 16.5px; color: var(--ink); margin-bottom: 4px; }
+.results__card-route { font-size: 13.5px; color: var(--muted); margin-bottom: 4px; }
+.results__card-notes { font-size: 13px; color: var(--body); }
+
+.results__card-side { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex: none; }
+.results__card-price { font-size: 18px; font-weight: 700; color: var(--navy); white-space: nowrap; }
+
+.results__empty { text-align: center; color: var(--muted); padding: 40px 0; }
+.results__empty--error { color: #c0392b; }
+
+.results__empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 56px 24px;
+  color: var(--muted);
+}
+.results__empty-card h2 { font-size: 18px; color: var(--ink); }
+.results__empty-card .btn { margin-top: 8px; }
+
+@media (max-width: 640px) {
+  .results__card { flex-direction: column; align-items: stretch; }
+  .results__card-side { align-items: flex-start; flex-direction: row; justify-content: space-between; }
+}

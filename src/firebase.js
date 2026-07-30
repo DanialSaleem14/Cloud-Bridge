@@ -1,6 +1,8 @@
 // Firebase initialization (from user-provided config)
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import { getAnalytics, isSupported as analyticsSupported } from 'firebase/analytics';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCsgT4uLys7ThrJl5rGfCgyDHXmuiVM3e8",
@@ -13,12 +15,12 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-let analytics;
-try {
-  analytics = getAnalytics(app);
-} catch (e) {
-  // Analytics may fail in non-browser environments; ignore silently.
-  analytics = null;
-}
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { app, analytics, firebaseConfig };
+let analytics = null;
+analyticsSupported()
+  .then((ok) => { if (ok) analytics = getAnalytics(app); })
+  .catch(() => { analytics = null; });
+
+export { app, auth, db, analytics, firebaseConfig };

@@ -18,7 +18,6 @@
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 .pkg__card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-.pkg__card.is-featured { outline: 2px solid var(--gold); }
 
 .pkg__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
 .pkg__media img { width: 100%; height: 100%; object-fit: cover; }
