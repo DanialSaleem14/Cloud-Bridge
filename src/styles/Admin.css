@@ -18,7 +18,7 @@
   padding: 36px 32px;
   text-align: center;
 }
-.admin-auth__logo img { height: 44px; margin-bottom: 18px; }
+.admin-auth__logo img { width: 180px; height: auto; margin-bottom: 18px; }
 .admin-auth__card h1 { font-size: 22px; color: var(--ink); margin-bottom: 6px; }
 .admin-auth__sub { font-size: 13.5px; color: var(--muted); margin-bottom: 24px; }
 .admin-auth__form { text-align: left; }
@@ -54,7 +54,7 @@
   background: #fff;
   border-bottom: 1px solid var(--line);
 }
-.admin__logo img { height: 34px; }
+.admin__logo img { width: 150px; height: auto; }
 .admin__header-right { display: flex; align-items: center; gap: 14px; }
 .admin__user { font-size: 13.5px; color: var(--muted); }
 
